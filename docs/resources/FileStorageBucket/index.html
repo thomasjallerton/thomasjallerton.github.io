@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>File Storage Bucket · Nimbus</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;File Storage buckets allow you to store files of any type, for example images or videos. The file storage buckets can also be designated as a static website that is exposed to the public.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="File Storage Bucket · Nimbus"/><meta property="og:type" content="website"/><meta property="og:url" content="https://nimbusframework.com/"/><meta property="og:description" content="&lt;p&gt;File Storage buckets allow you to store files of any type, for example images or videos. The file storage buckets can also be designated as a static website that is exposed to the public.&lt;/p&gt;
+"/><meta property="og:image" content="https://nimbusframework.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://nimbusframework.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nimbus.svg" alt="Nimbus"/><h2 class="headerTitleWithLogo">Nimbus</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/Introduction" target="_self">Docs</a></li><li class=""><a href="/docs/gettingstarted" target="_self">Getting Started</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Deploying Resources</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Documentation</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/Introduction">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Deploying Resources</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/resources/FileStorageBucket">File Storage Bucket</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/DocumentStore">Document Store</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/KeyValueStore">Key-Value Store</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/RelationalDatabase">Relational Database</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Functions</h4><ul><li class="navListItem"><a class="navItem" href="/docs/resources/functions/HttpFunction">HTTP Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/WebSocketFunction">WebSocket Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/DocumentStoreFunction">Document Store Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/KeyValueStoreFunction">Key-Value Store Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/NotificationFunction">Notification Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/QueueFunction">Queue Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/BasicFunction">Basic Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/FileStorageBucketFunction">File Storage Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/AfterDeployment">After Deployment Function</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Clients</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/clients/DocumentStoreClient">Document Store Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/KeyValueStoreClient">Key-Value Store Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/FileStorageClient">File Storage Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/WebSocketServerlessFunctionClient">WebSocket Management Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/BasicServerlessFunctionClient">Basic Serverless Function Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/NotificationClient">Notification Topic Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/QueueClient">Queue Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/DatabaseClient">Relational Database Client</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Local Deployment</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/localdeployment/UnitTests">Unit Testing</a></li><li class="navListItem"><a class="navItem" href="/docs/localdeployment/LocalServer">Local Server</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">File Storage Bucket</h1></header><article><div><span><p>File Storage buckets allow you to store files of any type, for example images or videos. The file storage buckets can also be designated as a static website that is exposed to the public.</p>
+<h2><a class="anchor" aria-hidden="true" id="basic-usage"></a><a href="#basic-usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Usage</h2>
+<p>To define a File Storage Bucket a class is annotated with <code>@FileStorageBucket</code>. This creates a bucket where files can be read and written.</p>
+<p>A basic example is shown below:</p>
+<pre><code class="hljs css language-java"><span class="hljs-meta">@FileStorageBucket</span>(bucketName = <span class="hljs-string">"imagebucket"</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ImageBucket</span> </span>{}
+</code></pre>
+<p>An important thing to note for AWS is that the bucket name must be unique across the whole platform, not just for you. The file bucket created will also not be called exactly what is provided in the field, it will also be appended with the stage that was deployed. E.g. in this example, if the stage being deployed to is dev the bucket created will be called <code>imagebucketdev</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="static-website"></a><a href="#static-website" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Static Website</h2>
+<p>To define a file storage bucket as a static website, the static website flag must be set to true. The website has an index file and error file that default to <code>index.html</code> and <code>error.html</code> respectively. These can be changed with the fields in the annotation. The index file is returned when the &quot;/&quot; path is requested. Whenever an error occurs, for example a file is not found, then the error page is returned.</p>
+<p>The path of a resource in the website is relative to its path in the file system. For example, if there is a file <code>examplefile.html</code> at the top level of the file bucket, then the URL to access this resource is <code>http://example-url.com/examplefile.html</code>. Similarly if there is a file within a directory of the file bucket, <code>directory/examplefile.html</code>, then this will be found at <code>http://example-url.com/directory/examplefile.html</code>.</p>
+<p>When a file storage bucket is created as a website, then once a deployment is completed the URL of the website will be reported.</p>
+<p>An example usage to create a static website is shown below:</p>
+<pre><code class="hljs css language-java"><span class="hljs-meta">@FileStorageBucket</span>(
+        bucketName = <span class="hljs-string">"NimbusExampleWebsite"</span>,
+        staticWebsite = <span class="hljs-keyword">true</span>
+)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Website</span> </span>{}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="file-uploads"></a><a href="#file-uploads" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File Uploads</h2>
+<p>File uploads can be done using the FileStorageBucketClient class, however this can only be done from serverless functions. If you want to upload files from your local machine then the <code>@FileUpload</code> annotation can be used. This allows you to specify files or directories to be uploaded to the bucket after it has been created. Specifically it is run on every deployment, after creation and before any <code>@AfterDeployment</code> scripts. These will trigger any functions set up to listen to the FileStorageBucket.</p>
+<p>If a path to a file is provided, then it will be uploaded to the path specified in the target path exactly, i.e. target path should be a file like &quot;helloworld.html&quot;.</p>
+<p>If a path to a directory is a provided then each file in the directory (and all sub-directories) will be uploaded to the target path directory, and creating any necessary subdirectories. I.e. target path should be a directory like &quot;&quot; or &quot;resources/&quot;.</p>
+<p>The content-type used for a file when hosted in a static website is determined automatically by looking at the file uploaded. This means if a HTML file is uploaded then it is likely to be hosted with a content-type of <code>text/html</code>, however is not guaranteed to work.</p>
+<p>An example file storage bucket, with file uploads is shown below:</p>
+<pre><code class="hljs css language-java"><span class="hljs-meta">@FileStorageBucket</span>(
+        bucketName = Website.WEBSITE_BUCKET,
+        staticWebsite = <span class="hljs-keyword">true</span>
+)
+<span class="hljs-meta">@FileUpload</span>(bucketName = Website.WEBSITE_BUCKET,
+            localPath = <span class="hljs-string">"src/website"</span>,
+            targetPath = <span class="hljs-string">""</span>,
+            substituteNimbusVariables = <span class="hljs-keyword">true</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Website</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String WEBSITE_BUCKET = <span class="hljs-string">"NimbusExampleWebsite"</span>;
+}
+</code></pre>
+<p>The website you host may also want to connect to other resources created by the deployment, like a REST API, a WebSocket API, or even another file storage bucket. The URLs required to connect to these are not available until a deployment is completed, so you cannot insert these manually without doing an initial deployment. To solve this problem, nimbus can perform variable substitution to insert these URLs.</p>
+<p>The variables that can be substituted are:</p>
+<ul>
+<li><code>${NIMBUS_REST_API_URL}</code> - Returns the base URL for a serverless function REST API (one created by <code>@HttpServerlessFunction</code> annotations). Does not have a &quot;/&quot; at the end, e.g. <code>http://www.target-invokation.com</code>.</li>
+<li><code>${NIMBUS_WEBSOCKET_API_URL}</code> - Returns the base URL for a serverless function WebSocket API (one create by <code>@WebSocketServerlessFunction</code> annotations) Does not have a &quot;/&quot; at the end, e.g. <code>http://www.websocket-invokation.com</code>.</li>
+<li><code>${BUCKETNAME_URL}</code> - where BUCKETNAME is the name of the bucket, as supplied in the annotation and entirely uppercase. This means it does not have the stage appended to the end. This returns the URL of a file storage bucket that is configured as a static website. Does not have a &quot;/&quot; at the end.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="annotation-specification"></a><a href="#annotation-specification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Annotation Specification</h2>
+<h3><a class="anchor" aria-hidden="true" id="filestoragebucket"></a><a href="#filestoragebucket" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@FileStorageBucket</h3>
+<h4><a class="anchor" aria-hidden="true" id="required-parameters"></a><a href="#required-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Required Parameters</h4>
+<ul>
+<li><code>bucketName</code> - The name of the file storage bucket in the cloud provider. In the actual cloud provider will be appended with the stage.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="optional-parameters"></a><a href="#optional-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Optional Parameters</h4>
+<ul>
+<li><code>staticWebsite</code> - Whether to deploy as a static website, making the bucket publicly accessible for reads. Defaults to false.</li>
+<li><code>indexFile</code> - The file to be returned when the base url is accessed. Only used in static websites. Defaults to &quot;index.html&quot;</li>
+<li><code>errorFile</code> - The file to be returned when an error occurs. Only used in static websites. Defaults to &quot;error.html&quot;</li>
+<li><code>stages</code> - The stages that this file storage bucket should be deployed to.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="fileupload"></a><a href="#fileupload" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>@FileUpload</h3>
+<h4><a class="anchor" aria-hidden="true" id="required-parameters-1"></a><a href="#required-parameters-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Required Parameters</h4>
+<ul>
+<li><code>bucketName</code> - The name of the bucket to be uploaded to, as specified in the @FileStorageBucket annotation</li>
+<li><code>localPath</code> - Path to file or directory on the local system</li>
+<li><code>targetPath</code> - Path to file or directory where file(s) will be uploaded</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="optional-parameters-1"></a><a href="#optional-parameters-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Optional Parameters</h4>
+<ul>
+<li><code>substituteNimbusVariables</code> - If variables should be substituted in the local file(s). Default false.</li>
+<li><code>stages</code> - The stages that the files will be uploaded.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/Introduction"><span class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button" href="/docs/resources/DocumentStore"><span>Document Store</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-usage">Basic Usage</a></li><li><a href="#static-website">Static Website</a></li><li><a href="#file-uploads">File Uploads</a></li><li><a href="#annotation-specification">Annotation Specification</a><ul class="toc-headings"><li><a href="#filestoragebucket">@FileStorageBucket</a></li><li><a href="#fileupload">@FileUpload</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/nimbus.svg" alt="Nimbus" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/gettingstarted.html">Getting Started</a><a href="/docs/Introduction.html">Documentation</a></div><div></div><div><h5>More</h5><a href="https://github.com/thomasjallerton/nimbus-core">GitHub</a><a class="github-button" href="https://github.com/thomasjallerton/nimbus-core" data-icon="octicon-star" data-show-count="false" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Thomas Allerton</section></footer></div></body></html>

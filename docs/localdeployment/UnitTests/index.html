@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Unit Testing · Nimbus</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;The nimbus framework provides some useful features to test that your functions work correctly by simulating the cloud environment. This allows you to check that a chain of function triggers is what you expect, that your functions are triggered with the correct output, and that stores have the items you expect in them.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Unit Testing · Nimbus"/><meta property="og:type" content="website"/><meta property="og:url" content="https://nimbusframework.com/"/><meta property="og:description" content="&lt;p&gt;The nimbus framework provides some useful features to test that your functions work correctly by simulating the cloud environment. This allows you to check that a chain of function triggers is what you expect, that your functions are triggered with the correct output, and that stores have the items you expect in them.&lt;/p&gt;
+"/><meta property="og:image" content="https://nimbusframework.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://nimbusframework.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/nimbus.svg" alt="Nimbus"/><h2 class="headerTitleWithLogo">Nimbus</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/Introduction" target="_self">Docs</a></li><li class=""><a href="/docs/gettingstarted" target="_self">Getting Started</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Local Deployment</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Documentation</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/Introduction">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Deploying Resources</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/resources/FileStorageBucket">File Storage Bucket</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/DocumentStore">Document Store</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/KeyValueStore">Key-Value Store</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/RelationalDatabase">Relational Database</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Functions</h4><ul><li class="navListItem"><a class="navItem" href="/docs/resources/functions/HttpFunction">HTTP Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/WebSocketFunction">WebSocket Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/DocumentStoreFunction">Document Store Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/KeyValueStoreFunction">Key-Value Store Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/NotificationFunction">Notification Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/QueueFunction">Queue Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/BasicFunction">Basic Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/FileStorageBucketFunction">File Storage Function</a></li><li class="navListItem"><a class="navItem" href="/docs/resources/functions/AfterDeployment">After Deployment Function</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Clients</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/clients/DocumentStoreClient">Document Store Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/KeyValueStoreClient">Key-Value Store Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/FileStorageClient">File Storage Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/WebSocketServerlessFunctionClient">WebSocket Management Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/BasicServerlessFunctionClient">Basic Serverless Function Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/NotificationClient">Notification Topic Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/QueueClient">Queue Client</a></li><li class="navListItem"><a class="navItem" href="/docs/clients/DatabaseClient">Relational Database Client</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Local Deployment</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/localdeployment/UnitTests">Unit Testing</a></li><li class="navListItem"><a class="navItem" href="/docs/localdeployment/LocalServer">Local Server</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Unit Testing</h1></header><article><div><span><p>The nimbus framework provides some useful features to test that your functions work correctly by simulating the cloud environment. This allows you to check that a chain of function triggers is what you expect, that your functions are triggered with the correct output, and that stores have the items you expect in them.</p>
+<h2><a class="anchor" aria-hidden="true" id="basics"></a><a href="#basics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basics</h2>
+<p>All unit tests that you want run in a simulated cloud environment rely on the <code>NimbusLocalDeployment</code> class. This class provides all the functionality required to test your project. Here is an example of a simple unit test.</p>
+<p>The data model used in the example:</p>
+<pre><code class="hljs css language-java"><span class="hljs-meta">@DocumentStore</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-meta">@Key</span>
+    <span class="hljs-keyword">public</span> String email;
+    <span class="hljs-meta">@Attribute</span>
+    <span class="hljs-keyword">public</span> String fullName;
+    
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> </span>{}
+    
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String email, String fullName)</span> </span>{
+        <span class="hljs-keyword">this</span>.email = email;
+        <span class="hljs-keyword">this</span>.fullName = fullName;
+    }
+    
+    <span class="hljs-comment">//Relevant equals, hashCode etc. methods. </span>
+    ...
+}
+</code></pre>
+<p>The code we want to test:</p>
+<pre><code class="hljs css language-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RestHandlers</span> </span>{
+   
+    <span class="hljs-keyword">private</span> DocumentStoreClient&lt;Person&gt; client = ClientBuilder.getDocumentStoreClient(Person.class);
+    
+    <span class="hljs-meta">@HttpServerlessFunction</span>(method = HttpMethod.POST, path = <span class="hljs-string">"person"</span>)
+    <span class="hljs-meta">@UsesDocumentStore</span>(Person.class)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">storePerson</span><span class="hljs-params">(Person person)</span> </span>{
+        client.put(person);
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Successfully saved person"</span>;
+    }
+}
+</code></pre>
+<p>The unit test (assuming both files are part of the &quot;com.allerton.nimbusExample.testExample&quot; package):</p>
+<pre><code class="hljs css language-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestRestHandlers</span> </span>{
+    
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testStorePersonPutsItemIntoStore</span><span class="hljs-params">()</span> </span>{
+        LocalNimbusDeployment localNimbusDeployment = LocalNimbusDeployment.getNewInstance(<span class="hljs-string">"com.allerton.nimbusExample.testExample"</span>);
+        
+        ServerlessMethod storePersonMethod = localNimbusDeployment.getMethod(RestHandlers.class, <span class="hljs-string">"storePerson"</span>);
+        
+        assertEquals(<span class="hljs-number">0</span>, storePersonMethod.getTimesInvoked());
+        
+        Person newPerson = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"testEmail"</span>, <span class="hljs-string">"test person"</span>);
+        
+        HttpRequest testRequest = <span class="hljs-keyword">new</span> HttpRequest(<span class="hljs-string">"person"</span>, HttpMethod.POST);
+        testRequest.setBodyFromObject(newPerson);
+        
+        localNimbusDeployment.sendHttpRequest(testRequest); <span class="hljs-comment">//Blocking call, simulates environment until reaches a constant state</span>
+        
+        assertEquals(<span class="hljs-number">1</span>, storePersonMethod.getTimesInvoked()); <span class="hljs-comment">//Check the function was invoked</span>
+        
+        LocalDocumentStore&lt;Person&gt; localStore = localNimbusDeployment.getDocumentStore(Person.class);
+        
+        assertEquals(<span class="hljs-number">1</span>, localStore.size());
+        
+        assertEquals(newPerson, localStore.get(<span class="hljs-string">"testEmail"</span>));
+    }
+}
+</code></pre>
+<p>This test function checks that our function is called on the correct HTTP request, and that it does put the item into the store.</p>
+<h2><a class="anchor" aria-hidden="true" id="instantiating-localnimbusdeployment"></a><a href="#instantiating-localnimbusdeployment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instantiating LocalNimbusDeployment</h2>
+<p>There are a few ways to get a <code>LocalNimbusDeployment</code> object. These are:</p>
+<p><code>LocalNimbusDeployment.getNewInstance(Class&lt;T&gt; object)</code> - Creates and simulates resources found only in this class, completely new instance.
+<code>LocalNimbusDeployment.getInstance(String packageName)</code> - Creates and simulates resources found in the package, looking in all subpackages. Also a completely new instance.
+<code>LocalNimbusDeployment.getInstance()</code> - Returns an existing LocalNimbusDeployment object. This is used by the nimbus clients primarily to interact with the local deployment. Not recommended for general use.</p>
+<h2><a class="anchor" aria-hidden="true" id="localnimbusdeployment-methods-for-unit-tests"></a><a href="#localnimbusdeployment-methods-for-unit-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LocalNimbusDeployment Methods for Unit Tests</h2>
+<ul>
+<li><p><code>&lt;K, V&gt; LocalKeyValueStore&lt;K, V&gt; getKeyValueStore(Class&lt;V&gt; valueClass)</code> - Gets the local deployment of the key value store corresponding to valueClass. LocalKeyValueStore has similar API to KeyValueStoreClient.</p></li>
+<li><p><code>&lt;T&gt; LocalDocumentStore&lt;T&gt; getDocumentStore(Class&lt;T&gt;: documentStore)</code> - Gets the local deployment of the document store corresponding to documentStore. LocalDocumentStore has similar API to DocumentStoreClient.</p></li>
+<li><p><code>LocalFileStorage getLocalFileStorage(String bucketName)</code> - Gets the local deployment of the file storage bucket corresponding to bucketName. LocalFileStorage has a similar API to FileStorageClient.</p></li>
+<li><p><code>LocalQueue getQueue(String id)</code> - Gets the local deployment of the queue corresponding to the queue id. LocalQueue allows you to add items to the queue, one at a time or in a batch. You can also query how many items have been added to the queue.</p></li>
+<li><p><code>LocalNotificationTopic getNotificationTopic(String topic)</code> - Gets the local deployment of the notification topic corresponding to topic. LocalNotificationTopic allows you to send notifications directly, as well as querying what endpoints have been notified with (as no emails or SMSs will be sent).</p></li>
+<li><p><code>&lt;T&gt; ServerlessMethod getMethod(Class&lt;T&gt; handlerClass, String methodName)</code> - Returns a wrapper for a serverless method that you have written, allowing you to check number of invocations as well as the most recent arguments and return values.</p></li>
+<li><p><code>void sendHttpRequest(HttpRequest request)</code> - Send a HTTP request internally (i.e. no actual HTTP request sent) which will trigger any functions set up to respond to the specified path and method.</p></li>
+<li><p><code>void connectToWebSockets(Map&lt;String, String&gt; headers, Map&lt;String, String&gt; queryStringParams)</code> - Send a connection request to the WebSocket API (i.e. sends to the $connect topic).</p></li>
+<li><p><code>void disconnectFromWebSockets()</code> - Send a disconnect request to the WebSocket API (i.e. along the $disconnect topic).</p></li>
+<li><p><code>sendWebSocketRequest(WebSocketRequest request)</code> - Send a request which will trigger any WebSocket function set to listen to the specified topic.</p></li>
+</ul>
+<p>These, along with the usual ClientBuilder.getClient() methods should allow for extensive unit testing of your project.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/clients/DatabaseClient"><span class="arrow-prev">← </span><span>Relational Database Client</span></a><a class="docs-next button" href="/docs/localdeployment/LocalServer"><span>Local Server</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basics">Basics</a></li><li><a href="#instantiating-localnimbusdeployment">Instantiating LocalNimbusDeployment</a></li><li><a href="#localnimbusdeployment-methods-for-unit-tests">LocalNimbusDeployment Methods for Unit Tests</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/nimbus.svg" alt="Nimbus" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/gettingstarted.html">Getting Started</a><a href="/docs/Introduction.html">Documentation</a></div><div></div><div><h5>More</h5><a href="https://github.com/thomasjallerton/nimbus-core">GitHub</a><a class="github-button" href="https://github.com/thomasjallerton/nimbus-core" data-icon="octicon-star" data-show-count="false" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Thomas Allerton</section></footer></div></body></html>
