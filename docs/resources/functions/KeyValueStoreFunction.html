@@ -127,7 +127,7 @@
             dataModel = UserDetail.class,
             method = StoreEventType.REMOVE
     )
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">newItem</span><span class="hljs-params">(UserDetail oldItem, StoreEvent event)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removeItem</span><span class="hljs-params">(UserDetail oldItem, StoreEvent event)</span> </span>{
         System.out.println(<span class="hljs-string">"User was deleted! "</span> + oldItem);
     }
 }
@@ -140,7 +140,7 @@
             dataModel = UserDetail.class,
             method = StoreEventType.MODIFY
     )
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">newItem</span><span class="hljs-params">(UserDetail oldItem, UserDetail newItem, StoreEvent event)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">modifyItem</span><span class="hljs-params">(UserDetail oldItem, UserDetail newItem, StoreEvent event)</span> </span>{
         System.out.println(<span class="hljs-string">"User was changed from "</span> + oldItem + <span class="hljs-string">" to "</span> + newItem);
     }
 }
